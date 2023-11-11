@@ -1,4 +1,6 @@
 import './Taskitem.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTrash,faBell} from '@fortawesome/free-solid-svg-icons';
 
 export default function Taskitem({tarea,tareas,setTareas}) {
   
@@ -22,8 +24,8 @@ export default function Taskitem({tarea,tareas,setTareas}) {
            <td scope="row">{tarea.id}</td>
            <td><span class={tarea.estado==0?"pendiente":"completado"}>{tarea.descrip}</span></td>
            <td>{tarea.estado==0?"Pendiente":"Completado"}</td>
-           <td><button class="btn btn-danger" onClick={() => eliminaTarea(tarea.id)}>Elimina</button>
-           <button class="btn btn-primary" onClick={() => editaEstado(tarea.id,tarea.estado)}>Estado</button></td>
+           <td><button class="btn btn-danger" onClick={() => eliminaTarea(tarea.id)}><FontAwesomeIcon icon={faTrash}/></button>
+           <button class="btn btn-primary" onClick={() => editaEstado(tarea.id,tarea.estado)}><FontAwesomeIcon icon={faBell}/></button></td>
            </tr>
     )
 }

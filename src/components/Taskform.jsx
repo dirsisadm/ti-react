@@ -1,5 +1,7 @@
 import { useState } from "react"
 import './Taskform.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
 export default function Taskform({tareas,setTareas}) {
     const [valor, setValor] = useState("");
@@ -24,7 +26,8 @@ export default function Taskform({tareas,setTareas}) {
                         <input type="text" class="form-control" value={valor} onChange={(e) => setValor(e.target.value)}/>
                     </div>	
                     <div class="mb-3">
-                        <button type="button" class="btn btn-primary" onClick={() => agregaTarea(valor)}>Agregar</button>
+                        <button type="button" class="btn btn-primary" onClick={() => agregaTarea(valor)}>
+                        <FontAwesomeIcon icon={faPlus}/> Agregar</button>
                     </div>
                 </div>
             </div>

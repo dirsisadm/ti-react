@@ -5,6 +5,7 @@ import Tareas from './assets/tareas';
 import Tasklist from './components/Tasklist';
 import Taskform from './components/Taskform';
 
+
 function App() {
 
   {/*  MODO SIN COMPONENTES 
@@ -17,6 +18,7 @@ function App() {
     <>
       <div class="container">
         <h1>Agenda</h1>
+        
         <div class="row">
             <Tasklist 
             tareas={tareas}
