@@ -1,7 +1,6 @@
 import Taskitem from "./Taskitem"
 export default function Tasklist({tareas,setTareas}) {
     return (
-        <div class="container">
             <div class="row">
                 <div class="col-12">
                 <table class="table  table-striped">
@@ -27,6 +26,5 @@ export default function Tasklist({tareas,setTareas}) {
                     </table>                
                 </div>
             </div>
-        </div>
     )
 }

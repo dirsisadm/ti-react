@@ -1,0 +1,6 @@
+.pendiente {
+    font-weight: 900;   
+}
+.completado {
+    text-decoration: line-through;
+}

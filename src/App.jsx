@@ -12,26 +12,24 @@ function App() {
   */}
 
   {/*Trae lsita de assets/tareas*/}
- 
   const [tareas, setTareas] = useState(Tareas);
   return (
     <>
-      <div>
+      <div class="container">
         <h1>Agenda</h1>
-        <hr/>
-        <Tasklist 
-        tareas={tareas}
-        setTareas={setTareas} 
-        />
-        <Taskform
-        tareas={tareas}
-        setTareas={setTareas} 
-        />
-
-      {/* MODO SIN COMPONENTES 
-      <ul>{listtareas}</ul>
-      */}      
-
+        <div class="row">
+            <Tasklist 
+            tareas={tareas}
+            setTareas={setTareas} 
+            />
+            <Taskform
+            tareas={tareas}
+            setTareas={setTareas} 
+            />
+        </div>
+        {/* MODO SIN COMPONENTES 
+        <ul>{listtareas}</ul>
+        */}      
       </div>
     </>
   )
