@@ -8,25 +8,27 @@ export default function Taskform({tareas,setTareas}) {
 
     const agregaTarea = (uvalor) => {
         //BUSCA ULTIMA TAREA PARA AGREGAR EL SIGUIENTE
-        let ultimo = tareas.length;
+        let ultimo = Date.now();
         //CREA NUEVA TAREA
         const newTarea = {"id":ultimo+1,"descrip":uvalor,"estado":0};
         //AGREGA TAREA
         setTareas([...tareas,newTarea]);
+        //ARCHIV EN LOCALSTORAGE
+        localStorage.setItem('Ltareas', JSON.stringify(tareas));
         //LIMPIAR INMPUT PARA EL PROXIMA AGREGADO
         setValor('');
     } 
     return (
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
-                     <h5 class="card-title">Nueva Tarea</h5>
-                     <div class="mb-3">
-                        <label class="form-label">Motivo</label>
-                        <input type="text" class="form-control" value={valor} onChange={(e) => setValor(e.target.value)}/>
+        <div className="row">
+            <div className="card">
+                <div className="card-body">
+                     <h5 className="card-title">Nueva Tarea</h5>
+                     <div className="mb-3">
+                        <label className="form-label">Motivo</label>
+                        <input type="text" className="form-control" value={valor} onChange={(e) => setValor(e.target.value)}/>
                     </div>	
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-primary" onClick={() => agregaTarea(valor)}>
+                    <div className="mb-3">
+                        <button type="button" className="btn btn-primary" onClick={() => agregaTarea(valor)}>
                         <FontAwesomeIcon icon={faPlus}/> Agregar</button>
                     </div>
                 </div>

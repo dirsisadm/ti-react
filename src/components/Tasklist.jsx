@@ -1,9 +1,10 @@
+import { render } from "react-dom"
 import Taskitem from "./Taskitem"
 export default function Tasklist({tareas,setTareas}) {
     return (
-            <div class="row">
-                <div class="col-12">
-                <table class="table  table-striped">
+            <div className="row">
+                <div className="col-12">
+                <table className="table  table-striped">
                     <thead>
                         <tr>
                         <th>ID</th>

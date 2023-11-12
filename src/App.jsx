@@ -13,13 +13,19 @@ function App() {
   */}
 
   {/*Trae lsita de assets/tareas*/}
-  const [tareas, setTareas] = useState(Tareas);
-  return (
+const [tareas, setTareas] = useState(Tareas);
+//const [tareas, setTareas] = useState("");
+
+//const Local = JSON.parse(localStorage.getItem('Ltareas'));
+//console.log(Local);
+//setTareas(Tareas);
+
+return (
     <>
-      <div class="container">
+      <div className="container">
         <h1>Agenda</h1>
         
-        <div class="row">
+        <div className="row">
             <Tasklist 
             tareas={tareas}
             setTareas={setTareas} 
