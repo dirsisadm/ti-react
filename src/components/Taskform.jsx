@@ -10,17 +10,17 @@ export default function Taskform({tareas,setTareas}) {
         //BUSCA ULTIMA TAREA PARA AGREGAR EL SIGUIENTE
         let ultimo = Date.now();
         //CREA NUEVA TAREA
-        const newTarea = {"id":ultimo+1,"descrip":uvalor,"estado":0};
+        const newTask = {"id":ultimo+1,"descrip":uvalor,"estado":0};
         //AGREGA TAREA
-        setTareas([...tareas,newTarea]);
+        setTareas([...tareas,newTask]);
         //ARCHIV EN LOCALSTORAGE
-        localStorage.setItem('Ltareas', JSON.stringify(tareas));
+        localStorage.setItem('Ltareas', JSON.stringify(newTask));
         //LIMPIAR INMPUT PARA EL PROXIMA AGREGADO
         setValor('');
     } 
     return (
-        <div className="row">
-            <div className="card">
+        <div className="row justify-content-md-center">
+            <div className="card text-bg-secondary mb-6 col-8">
                 <div className="card-body">
                      <h5 className="card-title">Nueva Tarea</h5>
                      <div className="mb-3">

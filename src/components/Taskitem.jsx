@@ -1,6 +1,6 @@
 import './Taskitem.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTrash,faBell} from '@fortawesome/free-solid-svg-icons';
+import {faTrash,faThumbsUp,faThumbsDown} from '@fortawesome/free-solid-svg-icons';
 
 export default function Taskitem({tarea,tareas,setTareas}) {
   
@@ -8,7 +8,7 @@ export default function Taskitem({tarea,tareas,setTareas}) {
         const newTask = tareas.filter((tarea) => tarea.id !==uid);
         setTareas(newTask);
         //ARCHIV EN LOCALSTORAGE
-        localStorage.setItem('Ltareas', JSON.stringify(tareas));
+        localStorage.setItem('Ltareas', JSON.stringify(newTask));
     }
     const editaEstado = (uid,uestado) => {
         const newTask = tareas.map((tarea) => {
@@ -21,16 +21,19 @@ export default function Taskitem({tarea,tareas,setTareas}) {
         });
         setTareas(newTask);
         //ARCHIV EN LOCALSTORAGE
-        localStorage.setItem('Ltareas', JSON.stringify(tareas));
+        localStorage.setItem('Ltareas', JSON.stringify(newTask));
         //localStorage.setItem("Tareas",[tareas]);
     }    
  
     return (<tr>
-           <td scope="row">{tarea.id}</td>
-           <td><span className={tarea.estado==0?"pendiente":"completado"}>{tarea.descrip}</span></td>
-           <td>{tarea.estado==0?"Pendiente":"Completado"}</td>
-           <td><button className="btn btn-danger" onClick={() => eliminaTarea(tarea.id)}><FontAwesomeIcon icon={faTrash}/></button>
-           <button className="btn btn-primary" onClick={() => editaEstado(tarea.id,tarea.estado)}><FontAwesomeIcon icon={faBell}/></button></td>
+           <td width="*"><span className={tarea.estado==0?"pendiente":"completado"}>{tarea.descrip}</span></td>
+           <td width="20%">{tarea.estado==0?"Pendiente":"Completado"}</td>
+           <td width="20%">
+            <button className={tarea.estado==0?"btn btn-link text-danger":"btn btn-link text-success"} onClick={() => editaEstado(tarea.id,tarea.estado)}>            
+            <FontAwesomeIcon icon={tarea.estado==0?faThumbsUp:faThumbsDown}/>
+            </button>
+            <button className="btn btn-link text-danger" onClick={() => eliminaTarea(tarea.id)}><FontAwesomeIcon icon={faTrash}/></button>
+            </td>
            </tr>
     )
 }
