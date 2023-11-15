@@ -11,11 +11,13 @@ export default function Taskform({tareas,setTareas}) {
         let ultimo = Date.now();
         //CREA NUEVA TAREA
         const newTask = {"id":ultimo,"descrip":uvalor,"estado":0};
+        //ARCHIVO TODO EL ARRAY EN UNA VARIABLE TEMP
+        const Temp= [...tareas,newTask]
         //AGREGA TAREA
-        setTareas([...tareas,newTask]);
-        //ARCHIV EN LOCALSTORAGE
-        localStorage.setItem('Ltareas', JSON.stringify(tareas));
-        //LIMPIAR INMPUT PARA EL PROXIMA AGREGADO
+        setTareas(Temp);
+        //ARCHIV EN LOCALSTORAGE (SOLO ASI NO PIERDO EL ULTIMO AGREGADO)
+        localStorage.setItem('Ltareas', JSON.stringify(Temp));
+        //LIMPIAR INPUT PARA EL PROXIMA AGREGADO
         setValor('');
     } 
     return (

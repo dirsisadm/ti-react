@@ -14,7 +14,7 @@ useEffect(() => {
 if (Ltareas){
   setTareas(Ltareas)
 }else{
-  setTareas(Tareas)
+  //setTareas(Tareas)
 }
 }, [])
 
