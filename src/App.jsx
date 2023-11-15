@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
 import Tareas from './assets/tareas';
@@ -13,12 +13,31 @@ function App() {
   */}
 
   {/*Trae lsita de assets/tareas*/}
-const [tareas, setTareas] = useState(Tareas);
-//const [tareas, setTareas] = useState("");
+  /*
+const [tareas, setTareas] = useState([]);
 
-//const Local = JSON.parse(localStorage.getItem('Ltareas'));
-//console.log(Local);
-//setTareas(Tareas);
+const url = 'http://localhost:3001/api/list/'
+const fetchApi = async () => {
+  const response = await fetch(url)
+  console.log(response)
+}
+useEffect(() => {
+  fetchApi()
+}, [])
+*/
+
+useEffect(() => {
+  const task = JSON.parse(localStorage.getItem("Ltareas"))
+  console.log(task)
+  setTareas(task)
+  
+}, [])
+
+/*
+useEffect(() => {
+  localStorage.getItem('Ltareas', JSON.stringify(tareas))
+}, [tareas])
+*/
 
 return (
     <>
