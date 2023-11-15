@@ -8,36 +8,15 @@ import Taskform from './components/Taskform';
 
 function App() {
 
-  {/*  MODO SIN COMPONENTES 
-    const listtareas = tareas.map((tarea) =>    <li>{tarea}</li> );  
-  */}
-
-  {/*Trae lsita de assets/tareas*/}
-  /*
 const [tareas, setTareas] = useState([]);
-
-const url = 'http://localhost:3001/api/list/'
-const fetchApi = async () => {
-  const response = await fetch(url)
-  console.log(response)
+const Ltareas = JSON.parse(localStorage.getItem('Ltareas'));
+useEffect(() => {
+if (Ltareas){
+  setTareas(Ltareas)
+}else{
+  setTareas(Tareas)
 }
-useEffect(() => {
-  fetchApi()
 }, [])
-*/
-
-useEffect(() => {
-  const task = JSON.parse(localStorage.getItem("Ltareas"))
-  console.log(task)
-  setTareas(task)
-  
-}, [])
-
-/*
-useEffect(() => {
-  localStorage.getItem('Ltareas', JSON.stringify(tareas))
-}, [tareas])
-*/
 
 return (
     <>

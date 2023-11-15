@@ -14,7 +14,7 @@ export default function Taskform({tareas,setTareas}) {
         //AGREGA TAREA
         setTareas([...tareas,newTask]);
         //ARCHIV EN LOCALSTORAGE
-        //localStorage.setItem('Ltareas', JSON.stringify(tareas));
+        localStorage.setItem('Ltareas', JSON.stringify(tareas));
         //LIMPIAR INMPUT PARA EL PROXIMA AGREGADO
         setValor('');
     } 
