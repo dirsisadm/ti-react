@@ -14,8 +14,6 @@ console.log(Ltareas);
 useEffect(() => {
 if (Ltareas){
   setTareas(Ltareas)
-}else{
-  //setTareas(Tareas)
 }
 }, [])
 
