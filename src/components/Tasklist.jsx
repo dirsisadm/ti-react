@@ -1,4 +1,3 @@
-import { render } from "react-dom"
 import Taskitem from "./Taskitem"
 export default function Tasklist({tareas,setTareas}) {
     return (
