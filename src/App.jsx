@@ -22,7 +22,7 @@ if (Ltareas){
 return (
     <>
       <div className="container">
-        <h1>Agenda</h1>
+        <p className="fs-1 text-center">Agenda</p>
         
         <div className="row">
             <Tasklist 
